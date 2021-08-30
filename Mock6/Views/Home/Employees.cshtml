@@ -1,0 +1,43 @@
+﻿@model List<Employee>
+
+<h1>Employee List</h1>
+
+<div>
+    <table>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelEmployees => employee.FirstName);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelEmployees => employee.Age);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelEmployees => employee.Salary);
+                    </td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<h2>Employee Selection</h2>
+
+<form asp-controller="Home" asp-action="RetirementInfo">
+
+    <div>
+        <label>Enter Id:</label>
+        <input type="number" name="Id" />
+    </div>
+
+    <button>Submit</button>
+
+
+</form>
